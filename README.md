@@ -38,8 +38,9 @@ If you feel like contributing, go ahead, fork it and open a pull request.
   feature-branch/nick # personal branch
   ```
 
-  Personal branches will eventually be merged to `feature-branch/master` which
-  at some point will be merged to `master`.
+  [Merge](#merging) at will the personal branches to the team-wide branch
+  *after* rebasing onto it, in order to maintain a simple history. Eventually,
+  the team-wide branch will be merged to `master`.
 
 * Delete your branch from the upstream repository after it's merged (unless
   there is a specific reason not to).
