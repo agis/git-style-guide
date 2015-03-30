@@ -79,7 +79,7 @@ If you feel like contributing, go ahead, fork it and open a pull request.
   $ git commit -m
   ```
 
-  Commiting from the terminal encourages a mindset of having to write
+  Committing from the terminal encourages a mindset of having to write
   everything in a single line which results in non-informative, ambiguous
   commit messages.
 
@@ -177,7 +177,7 @@ If you feel like contributing, go ahead, fork it and open a pull request.
 
 * There are various workflows and each one has its advantages and disadvantages.
   There is no one "true git workflow". A workflow should be chosen based on
-  the team working on the project, it's scale, the infrastructure underneath.
+  the team working on the project, its scale, the infrastructure underneath.
 
   It is important though to actually *choose* a workflow and stick with it.
 
