@@ -142,7 +142,7 @@ If you feel like contributing, go ahead, fork it and open a pull request.
 
   * You want to tidy up your branch (ie. squash/reorder commits, reword
     messages) and/or rebase it onto the 'master' branch *just before you
-    merge it*
+    merge it*.
 
   That said, *never rewrite the history of the `master` branch* or any other
   "important" branches (ie. used by production or CI servers).
@@ -161,6 +161,10 @@ If you feel like contributing, go ahead, fork it and open a pull request.
 
        This results in a branch that can be applied directly to the end of the
        `master` branch and results in a very simple history.
+
+       *(Note: This workflow is better suited for projects with short-running
+       branches. Otherwise it might be better to occassionally merge the branch
+       instead of rebasing onto it.)*
 
 * If your branch includes more than one commit, do not merge with a
   fast-forward:
