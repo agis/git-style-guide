@@ -67,6 +67,7 @@ If you feel like contributing, go ahead, fork it and open a pull request.
 * Commits should be ordered *logically*. For example, if *commit X* depends
   on changes done in *commit Y*, then *commit Y* should come before *commit X*.
 
+
 ### Messages
 
 * Use the editor, not the terminal, when writing a commit message:
@@ -126,6 +127,17 @@ If you feel like contributing, go ahead, fork it and open a pull request.
 
   Similarly, if *commit A* solves a bug introduced by *commit B*, it should
   be stated in the message of *commit A*.
+
+* If a commit is going to be squashed or fixed-up to another commit use the
+  `--squash` and `--fixup` flags respectively in order to make the intention
+  clear:
+
+  ```shell
+  $ git commit --squash f387cab2
+  ```
+
+  *(Tip: Then you can use the `--autosquash` flag when rebasing and the marked
+  commits will be squashed automatically.)*
 
 ## Merging
 
