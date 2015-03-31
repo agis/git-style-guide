@@ -175,9 +175,9 @@ If you feel like contributing, go ahead, fork it and open a pull request.
 
 ## Misc.
 
-* There are various workflows and each one has its advantages and disadvantages.
-  There is no one "true git workflow". A workflow should be chosen based on
-  the team working on the project, its scale, the infrastructure underneath.
+* There are various workflows and each one has its strengths and weaknesses.
+  Whether a workflow is good depends on the team, the project and the
+  development workflow.
 
   It is important though to actually *choose* a workflow and stick with it.
 
