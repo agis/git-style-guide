@@ -17,7 +17,7 @@ If you feel like contributing, go ahead, fork it and open a pull request.
 
 ## Branches
 
-* Choose *short*, *descriptive* names and prefer dashes over underscores:
+* Choose *short* and *descriptive* names:
 
   ```shell
   # good
@@ -26,6 +26,8 @@ If you feel like contributing, go ahead, fork it and open a pull request.
   # bad - too vague
   $ git checkout -b login_fix
   ```
+
+* Prefer *dashes* over underscores.
 
 * When several people are working *independently* on a big feature it might be
   convenient to have *personal* branches and a *team-wide* branch. In that case,
