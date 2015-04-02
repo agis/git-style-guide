@@ -158,6 +158,9 @@ If you feel like contributing, go ahead, fork it and open a pull request.
     messages) and/or rebase it onto the 'master' branch *just before you
     merge it*.
 
+  * You have to remove accidentally committed sensitive data. [*How to do
+    it properly*](https://help.github.com/articles/remove-sensitive-data/).
+
   That said, *never rewrite the history of the `master` branch* or any other
   "important" branches (ie. used by production or CI servers).
 
