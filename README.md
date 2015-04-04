@@ -96,8 +96,9 @@ request.
 
 * The summary line (ie. the first line of the message) should be
   *descriptive* yet *succinct*. Ideally, it should be no longer than
-  *50* characters. It should be capitalized and written in imperative present
-  tense. It should not end with a period since it is effectively a title:
+  *50 characters*. It should be capitalized and written in imperative present
+  tense. It should not end with a period since it is effectively the commit
+  title:
 
   ```shell
   # good - imperative present tense, capitalized, less than 50 characters
@@ -107,9 +108,9 @@ request.
   fixed ActiveModel::Errors deprecation messages failing when AR was used outside of Rails.
   ```
 
-* After the summary line, a blank line should follow and after that should come
-  a more thorough. It should be wrapped to *72* characters and describe *why*
-  the change is needed, *how* it addresses the issue and any *side-effects*
+* After that should come a blank line followed by a more more thorough
+  description. It should be wrapped to *72 characters* and explain *why*
+  the change is needed, *how* it addresses the issue and what *side-effects*
   it might have.
 
   It should also provide any pointers to related resources (eg. link to the
