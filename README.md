@@ -114,24 +114,27 @@ request.
   it might have.
 
   It should also provide any pointers to related resources (eg. link to the
-  corresponding issue in a bug tracker):
+  corresponding issue in a bug tracker). The following is an example template originally
+  wrote by [Tim Pope](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
 
   ```shell
-  Mark huge records as obsolete when clearing hinting faults # <- summary line
-                                                             # <- blank line
-  Base products are marked obsolete when the NUMA hinting information is
-  cleared but the same does not happen for huge records which this patch
-  addresses.
+  Short (50 chars or less) summary of changes
 
-  Note that migrated records are not marked as obsolete as the migration
-  code does not assume that migrated records have been referenced. This
-  could be addressed but beyond the scope of this series.
+  More detailed explanatory text, if necessary. Wrap it to
+  72 characters. In some contexts, the first
+  line is treated as the subject of an email and the rest of
+  the text as the body.  The blank line separating the
+  summary from the body is critical (unless you omit the body
+  entirely); tools like rebase can get confused if you run
+  the two together.
 
-  Bullet points are fine:
+  Further paragraphs come after blank lines.
 
-  - like this
-  - that
-  - and that
+    - Bullet points are okay, too
+
+    - Typically a hyphen or asterisk is used for the bullet,
+      preceded by a single space, with blank lines in
+      between, but conventions vary here
 
   Also see http://example.com/issue/1 # <- pointer to related source
   ```
