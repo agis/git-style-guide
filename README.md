@@ -97,7 +97,7 @@ request.
 * The summary line (ie. the first line of the message) should be
   *descriptive* yet *succinct*. Ideally, it should be no longer than
   *50* characters. It should be capitalized and written in imperative present
-  tense and should not end with a period:
+  tense. It should not end with a period since it is effectively a title:
 
   ```shell
   # good - imperative present tense, capitalized, less than 50 characters
