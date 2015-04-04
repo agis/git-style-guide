@@ -27,7 +27,7 @@ request.
   $ git checkout -b login_fix
   ```
 
-* Prefer *dashes* over underscores.
+* Use *dashes* to separate words.
 
 * When several people are working independently on a feature, it might be
   convenient to have *personal* branches and a *team-wide* branch. In that case,
