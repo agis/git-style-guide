@@ -94,10 +94,10 @@ request.
   in a single line which usually results in non-informative, ambiguous commit
   messages.
 
-* The commit summary line should be *descriptive* yet *succinct*. It should be
-  no longer than *50* characters. It should be capitalized and written in
-  imperative present tense. If it is a single sentence, do not put a period at
-  the end:
+* The summary line (ie. the first line of the message) should be
+  *descriptive* yet *succinct*. It should be no longer than *50* characters.
+  It should be capitalized and written in imperative present tense.
+  Do not end the sentence with a period:
 
   ```shell
   # good - imperative present tense, capitalized, less than 50 characters
@@ -107,17 +107,17 @@ request.
   fixed ActiveModel::Errors deprecation messages failing when AR was used outside of Rails.
   ```
 
-* The commit description should be wrapped to *72* characters. It should
-  describe the *problem*, *how* the patch solves it and any *side-effects* it
-  might have.
+* After the summary line, a blank line and then a more thorough description
+  should follow. It should be wrapped to *72* characters and describe *why*
+  the change is needed, *how* it addresses the issue and any *side-effects*
+  it might have.
 
-  It should be separated from the summary with a blank line. It should also
-  provide any pointers to relevant resources (eg. link to a relevant record in
-  a bug tracker):
+  It should also provide any pointers to related resources (eg. link to the
+  corresponding issue in a bug tracker):
 
   ```shell
-  Mark huge records as obsolete when clearing hinting faults # <- summary
-
+  Mark huge records as obsolete when clearing hinting faults # <- summary line
+                                                             # <- blank line
   Base products are marked obsolete when the NUMA hinting information is
   cleared but the same does not happen for huge records which this patch
   addresses.
