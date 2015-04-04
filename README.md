@@ -95,10 +95,11 @@ request.
 
 * The commit summary line should be *descriptive* yet *succinct*. It should be
   no longer than *50* characters. It should be capitalized and written in
-  imperative present tense. If it is a single sentence, do not put a period at the end:
+  imperative present tense. If it is a single sentence, do not put a period at
+  the end:
 
   ```shell
-  # good - present tense, capitalized, less than 50 characters
+  # good - imperative present tense, capitalized, less than 50 characters
   Mark huge records as obsolete when clearing hinting faults
 
   # bad
