@@ -37,15 +37,16 @@ request.
 
 * Use *dashes* to separate words.
 
-* When several people are working independently on a feature, it might be
-  convenient to have *personal* branches and a *team-wide* branch. In that case,
-  suffix the name of the branch by a slash, followed by the person's name.
-  Use *"master"* for the team-wide branch:
+* When several people are working on the *same* feature, it might be convenient
+  to have *personal* feature branches and a *team-wide* feature branch.
+  In that case, suffix the name of branch with a slash, followed by the
+  person's name for the personal branches and *"master"* for the team-wide
+  branch:
 
   ```shell
-  feature-branch/master # team-wide branch
-  feature-branch/maria # personal branch
-  feature-branch/nick # personal branch
+  $ git checkout -b feature-a/master # team-wide branch
+  $ git checkout -b feature-a/maria # Maria's branch
+  $ git checkout -b feature-a/nick # Nick's branch
   ```
 
   [Merge](#merging) at will the personal branches to the team-wide branch
