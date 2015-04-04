@@ -127,7 +127,13 @@ request.
   code does not assume that migrated records have been referenced. This
   could be addressed but beyond the scope of this series.
 
-  See http://example.com/issue/1 # <- pointer to related source
+  Bullet points are fine:
+
+  - like this
+  - that
+  - and that
+
+  Also see http://example.com/issue/1 # <- pointer to related source
   ```
 
   Ultimately, when writing a commit message, think about what you would need
