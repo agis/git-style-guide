@@ -27,6 +27,14 @@ request.
   $ git checkout -b login_fix
   ```
 
+* Identifiers from corresponding tickets in an external service (eg. a GitHub
+  issue) are also good candidates for use in branch names. For example:
+
+  ```shell
+  # GitHub issue #15
+  $ git checkout -b issue-15
+  ```
+
 * Use *dashes* to separate words.
 
 * When several people are working independently on a feature, it might be
