@@ -87,7 +87,7 @@ request.
   $ git commit
 
   # bad
-  $ git commit -m
+  $ git commit -m "Quick fix"
   ```
 
   Committing from the terminal encourages a mindset of having to fit everything
