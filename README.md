@@ -114,8 +114,7 @@ request.
   it might have.
 
   It should also provide any pointers to related resources (eg. link to the
-  corresponding issue in a bug tracker). The following is an example template originally
-  wrote by [Tim Pope](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
+  corresponding issue in a bug tracker):
 
   ```shell
   Short (50 chars or less) summary of changes
@@ -136,7 +135,7 @@ request.
       preceded by a single space, with blank lines in
       between, but conventions vary here
 
-  Also see http://example.com/issue/1 # <- pointer to related source
+  Taken from http://git-scm.com/book/ch5-2.html
   ```
 
   Ultimately, when writing a commit message, think about what you would need
