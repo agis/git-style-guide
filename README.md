@@ -211,8 +211,11 @@ request.
 
 * *Test before you push.* Do not push half-done work.
 
-* Use [tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging) to mark specific
-  points in the history as important (eg. when releasing a new version).
+* Use [annotated tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags) for
+  marking releases or other points in the history as important.
+
+  Use [lightweight tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) to bookmark/label commits for private and temporary
+  use.
 
 * Keep your repositories at a good shape. Perform maintenance tasks
   occasionally. This goes for both local and remote repositories:
