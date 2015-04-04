@@ -95,9 +95,9 @@ request.
   messages.
 
 * The summary line (ie. the first line of the message) should be
-  *descriptive* yet *succinct*. It should be no longer than *50* characters.
-  It should be capitalized and written in imperative present tense.
-  Do not end the sentence with a period:
+  *descriptive* yet *succinct*. Ideally, it should be no longer than
+  *50* characters. It should be capitalized and written in imperative present
+  tense and should not end with a period:
 
   ```shell
   # good - imperative present tense, capitalized, less than 50 characters
@@ -107,8 +107,8 @@ request.
   fixed ActiveModel::Errors deprecation messages failing when AR was used outside of Rails.
   ```
 
-* After the summary line, a blank line and then a more thorough description
-  should follow. It should be wrapped to *72* characters and describe *why*
+* After the summary line, a blank line should follow and after that should come
+  a more thorough. It should be wrapped to *72* characters and describe *why*
   the change is needed, *how* it addresses the issue and any *side-effects*
   it might have.
 
