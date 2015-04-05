@@ -224,10 +224,10 @@ request.
 * *Test before you push.* Do not push half-done work.
 
 * Use [annotated tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags) for
-  marking releases or other points in the history as important.
+  marking releases or other important points in the history.
 
-  Use [lightweight tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) to bookmark/label commits for private and temporary
-  use.
+  Prefer [lightweight tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) for personal use, such as to bookmark commits
+  for future reference.
 
 * Keep your repositories at a good shape by performing maintenance tasks
   occasionally, in your local *and* remote repositories:
