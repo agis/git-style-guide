@@ -99,7 +99,7 @@ request.
   *descriptive* yet *succinct*. Ideally, it should be no longer than
   *50 characters*. It should be capitalized and written in imperative present
   tense. It should not end with a period since it is effectively the commit
-  title:
+  *title*:
 
   ```shell
   # good - imperative present tense, capitalized, less than 50 characters
