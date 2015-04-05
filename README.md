@@ -229,8 +229,8 @@ request.
   Use [lightweight tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) to bookmark/label commits for private and temporary
   use.
 
-* Keep your repositories at a good shape. Perform maintenance tasks
-  occasionally. This goes for both local and remote repositories:
+* Keep your repositories at a good shape by performing maintenance tasks
+  occasionally, in your local *and* remote repositories:
 
   * [`git-gc(1)`](http://git-scm.com/docs/git-gc)
   * [`git-prune(1)`](http://git-scm.com/docs/git-prune)
