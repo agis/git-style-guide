@@ -102,7 +102,7 @@ request.
   *title*:
 
   ```shell
-  # good - imperative present tense, capitalized, less than 50 characters
+  # good - imperative present tense, capitalized, fewer than 50 characters
   Mark huge records as obsolete when clearing hinting faults
 
   # bad
@@ -118,7 +118,7 @@ request.
   corresponding issue in a bug tracker):
 
   ```shell
-  Short (50 chars or less) summary of changes
+  Short (50 chars or fewer) summary of changes
 
   More detailed explanatory text, if necessary. Wrap it to
   72 characters. In some contexts, the first
