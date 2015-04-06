@@ -68,6 +68,12 @@ request.
 * Each commit should be a single *logical change*. Don't make several
   *logical changes* in one commit. For example, if a patch fixes a bug and
   optimizes the performance of a feature, split it into two separate commits.
+  If you find it difficult to summarize what your commit does, you may be trying
+  to commit several *logical changes* that should be split into separate 
+  commits. Use ```git add -p``` which allows the user to interactively 
+  select the changes that will be added to the index from the working tree.
+  This effectively runs ```git add -i```, but bypasses the initial 
+  command menu and directly jumps to the patch subcommand.
 
 * Don't split a single *logical change* into several commits. For example,
   the implementation of a feature and the corresponding tests should be in the
