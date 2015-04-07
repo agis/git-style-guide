@@ -60,7 +60,7 @@ request.
   Tip: Use the following command to list merged branches:
 
   ```shell
-  $ git branch --merged master | grep -v "\* master"`
+  $ git branch --merged master | grep -v "master"
   ```
 
 ## Commits
