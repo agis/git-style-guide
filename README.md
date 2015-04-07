@@ -61,7 +61,7 @@ request.
   branches:
 
   ```shell
-  $ git branch --merged | grep -v "\* master"
+  $ git branch --merged | grep -v "\*"
   ```
 
 ## Commits
