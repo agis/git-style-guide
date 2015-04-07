@@ -70,9 +70,9 @@ request.
   optimizes the performance of a feature, split it into two separate commits.
   If you find it difficult to summarize what your commit does, you may be trying
   to commit several *logical changes* that should be split into separate 
-  commits. Use ```git add -p``` which allows the user to interactively 
+  commits. Use `git add -p` which allows the user to interactively 
   select the changes that will be added to the index from the working tree.
-  This effectively runs ```git add -i```, but bypasses the initial 
+  This effectively runs `git add -i`, but bypasses the initial 
   command menu and directly jumps to the patch subcommand.
 
 * Don't split a single *logical change* into several commits. For example,
