@@ -57,10 +57,11 @@ request.
 * Delete your branch from the upstream repository after it's merged (unless
   there is a specific reason not to).
 
-  Tip: Use the following command to list merged branches:
+  Tip: Use the following command while being on "master", to list merged
+  branches:
 
   ```shell
-  $ git branch --merged master | grep -v "\* master"`
+  $ git branch --merged | grep -v "\* master"
   ```
 
 ## Commits
