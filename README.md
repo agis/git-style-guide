@@ -131,13 +131,13 @@ request.
 
   Further paragraphs come after blank lines.
 
-    - Bullet points are okay, too
+  - Bullet points are okay, too
 
-    - Typically a hyphen or asterisk is used for the bullet,
-      preceded by a single space, with blank lines in
-      between, but conventions vary here
+  - Use a hyphen or an asterisk for the bullet,
+    followed by a single space, with blank lines in
+    between
 
-  Taken from http://git-scm.com/book/ch5-2.html
+  Source http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
   ```
 
   Ultimately, when writing a commit message, think about what you would need
