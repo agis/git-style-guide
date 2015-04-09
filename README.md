@@ -40,14 +40,12 @@ request.
 
 * When several people are working on the *same* feature, it might be convenient
   to have *personal* feature branches and a *team-wide* feature branch.
-  In that case, suffix the name of branch with a slash, followed by the
-  person's name for the personal branches and *"master"* for the team-wide
-  branch:
+  Use the following naming convention:
 
   ```shell
   $ git checkout -b feature-a/master # team-wide branch
-  $ git checkout -b feature-a/maria # Maria's branch
-  $ git checkout -b feature-a/nick # Nick's branch
+  $ git checkout -b feature-a/maria  # Maria's personal branch
+  $ git checkout -b feature-a/nick   # Nick's personal branch
   ```
 
   Merge at will the personal branches to the team-wide branch (see ["Merging"](#merging)).
