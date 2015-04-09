@@ -50,9 +50,8 @@ request.
   $ git checkout -b feature-a/nick # Nick's branch
   ```
 
-  [Merge](#merging) at will the personal branches to the team-wide branch
-  *after* rebasing onto it (in order to maintain a simple history). Eventually,
-  the team-wide branch will be merged to `master`.
+  Merge at will the personal branches to the team-wide branch (see ["Merging"](#merging)).
+  Eventually, the team-wide branch will be merged to `master`.
 
 * Delete your branch from the upstream repository after it's merged (unless
   there is a specific reason not to).
