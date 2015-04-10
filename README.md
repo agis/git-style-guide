@@ -1,48 +1,41 @@
-# Git Style Guide
+# Git 风格指南
+这是一个 Git 风格指南， 收到了来自 [*How to Get Your Change Into the Linux Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
+[git man pages](http://git-scm.com/doc)
+和大量社区欢迎的实践的启发。
 
-This is a Git Style Guide inspired by [*How to Get Your Change Into the Linux
-Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
-the [git man pages](http://git-scm.com/doc) and various practices popular
-among the community.
+# 目录
 
-If you feel like contributing, please do so! Fork the project and open a pull
-request.
-
-# Table of contents
-
-1. [Branches](#branches)
-2. [Commits](#commits)
-  1. [Messages](#messages)
-3. [Merging](#merging)
-4. [Misc.](#misc)
+1. [分支](#branches)
+2. [提交](#commits)
+  1. [消息](#messages)
+3. [合并](#merging)
+4. [杂项](#misc)
 
 ## Branches
 
-* Choose *short* and *descriptive* names:
+* 选择*短的*和*描述性*的名字来命名分支
 
   ```shell
-  # good
+  # 好！
   $ git checkout -b oauth-migration
 
-  # bad - too vague
+  # 错误，太模糊了！
   $ git checkout -b login_fix
   ```
 
-* Identifiers from corresponding tickets in an external service (eg. a GitHub
-  issue) are also good candidates for use in branch names. For example:
+* 来自外部的标识符也是很好的用作分支的名字，例如来自 Github 的 Issue 的
+  序号。
 
   ```shell
   # GitHub issue #15
   $ git checkout -b issue-15
   ```
 
-* Use *dashes* to separate words.
+* 用破折号去分割单词
 
-* When several people are working on the *same* feature, it might be convenient
-  to have *personal* feature branches and a *team-wide* feature branch.
-  In that case, suffix the name of branch with a slash, followed by the
-  person's name for the personal branches and *"master"* for the team-wide
-  branch:
+* 当不同的人在同一个特性上工作的时候，这也许很方便去拥有个人的特性分支和一个面向全队的特性分支。
+  在这种情况下，将斜划线作为分支名的后缀，并接着一个人的名字来代表这个的个人分支，并用 master
+  表示面向团队的分支。
 
   ```shell
   $ git checkout -b feature-a/master # team-wide branch
@@ -50,15 +43,11 @@ request.
   $ git checkout -b feature-a/nick # Nick's branch
   ```
 
-  [Merge](#merging) at will the personal branches to the team-wide branch
-  *after* rebasing onto it (in order to maintain a simple history). Eventually,
-  the team-wide branch will be merged to `master`.
+  在你变基后(rebase), 随意[合并](#merging) 你的特性分支到团队的特性分支。最终，
+  整个团队的分支会被合并到 master 分支。
 
-* Delete your branch from the upstream repository after it's merged (unless
-  there is a specific reason not to).
-
-  Tip: Use the following command while being on "master", to list merged
-  branches:
+* 当这个分支不再需要的时候，通常也就是Merge过后，删除这个特性分支。除非你有必须的原因。
+  Tip: 用下面的命令，清理干净分支。
 
   ```shell
   $ git branch --merged | grep -v "\*"
@@ -66,23 +55,18 @@ request.
 
 ## Commits
 
-* Each commit should be a single *logical change*. Don't make several
-  *logical changes* in one commit. For example, if a patch fixes a bug and
-  optimizes the performance of a feature, split it into two separate commits.
+* 每个提交应当只包含一个简单地的逻辑上的改变，不要在一个提交里改变多件事情。比如，如果一个
+  Patch 修复了一个Bug，又改变了一个功能的效率， 把它分开吧。
 
-* Don't split a single *logical change* into several commits. For example,
-  the implementation of a feature and the corresponding tests should be in the
-  same commit.
+* 不要将一个改变分成多个提交。 例如一个功能的实现和他对应的测试应当在一个提交里提交。
 
-* Commit *early* and *often*. Small, self-contained commits are easier to
-  understand and revert when something goes wrong.
+* 快速和实时提交，小的，独立的提交更容易理解和撤销当出错的时候。
 
-* Commits should be ordered *logically*. For example, if *commit X* depends
-  on changes done in *commit Y*, then *commit Y* should come before *commit X*.
+* 提交应当*逻辑上*排序的得当。例如，如果 X 提交依赖于 Y，那么 Y 提交应该在 X 前面。
 
 ### Messages
 
-* Use the editor, not the terminal, when writing a commit message:
+* 使用编辑器, 而不是终端去编写你的提交消息
 
   ```shell
   # good
@@ -92,15 +76,11 @@ request.
   $ git commit -m "Quick fix"
   ```
 
-  Committing from the terminal encourages a mindset of having to fit everything
-  in a single line which usually results in non-informative, ambiguous commit
-  messages.
+  来自终端的提交造成了一种不好的模式： 我必须包含所有事情在一行的空间里，这通常让人不知道你到底
+  在这个提交信息里到底想说什么，
 
-* The summary line (ie. the first line of the message) should be
-  *descriptive* yet *succinct*. Ideally, it should be no longer than
-  *50 characters*. It should be capitalized and written in imperative present
-  tense. It should not end with a period since it is effectively the commit
-  *title*:
+  概要行，通常是第一行应当是描述性而简明的，理想情况下，他应当不超过50个字符，用大写字母开头并且
+  有着迫切的表现欲。不应当以句号结尾, 这是一个*标题*
 
   ```shell
   # good - imperative present tense, capitalized, fewer than 50 characters
@@ -110,13 +90,10 @@ request.
   fixed ActiveModel::Errors deprecation messages failing when AR was used outside of Rails.
   ```
 
-* After that should come a blank line followed by a more thorough
-  description. It should be wrapped to *72 characters* and explain *why*
-  the change is needed, *how* it addresses the issue and what *side-effects*
-  it might have.
+* 在那之后，应当有一空行，然后跟着详细的描述，应当小于*72 字符* 和解释
+  *为什么* 需要需要变化, *如何*解决了这个 issue 和它拥有什么副作用。
 
-  It should also provide any pointers to related resources (eg. link to the
-  corresponding issue in a bug tracker):
+  应当提供尽可能的帮助和相关资源，例如连接到对应的 issue 的 bug tracer
 
   ```shell
   Short (50 chars or fewer) summary of changes
@@ -140,18 +117,17 @@ request.
   Source http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
   ```
 
-  Ultimately, when writing a commit message, think about what you would need
-  to know if you run across the commit in a year from now.
+  最终，当你写完了一个 commit 的 message, 考虑一下你会遇到什么问题，在漫长的一
+  年之后。
 
-* If a *commit A* depends on another *commit B*, the dependency should be
-  stated in the message of *commit A*. Use the commit's hash when referring to
-  commits.
+* 如果 *commit A* 依赖于另一个 *commit B* ，依赖应当在你的提交里提及到，使用对应
+  的 hash 值来表示。
 
-  Similarly, if *commit A* solves a bug introduced by *commit B*, it should
-  be stated in the message of *commit A*.
+  相似的，如果 *commit A* 解决了一个 bug 被 *commit B* 引入的，这应当也被在
+  *commit A* 提及。
 
-* If a commit is going to be squashed to another commit use the `--squash` and
-  `--fixup` flags respectively, in order to make the intention clear:
+* 如果一个commit 将要被 squash 到另一个 commit 处，各自使用 `--squash` 和 `--fixup`
+  使得这些 commit 的目的更明显:
 
   ```shell
   $ git commit --squash f387cab2
@@ -162,44 +138,39 @@ request.
 
 ## Merging
 
-* **Do not rewrite published history.** The repository's history is valuable in
-  its own right and it is very important to be able to tell *what actually
-  happened*. Altering published history is a common source of problems for
-  anyone working on the project.
+* **不要篡改提交历史** 仓库的历史本身就很宝贵并且它是十分重要的能够告诉
+  *实际发生了什么*。 修改历史是万恶之源对任何参与这个工程的人。
 
 * However, there are cases where rewriting history is legitimate. These are
   when:
+* 尽管如此，有些时候还是可以重写历史的：
 
-  * You are the only one working on the branch and it is not being reviewed.
+  * 你一个人孤军奋战，而且你的代码不会被人看到。
 
-  * You want to tidy up your branch (eg. squash commits) and/or rebase it onto
-    the "master" in order to merge it later.
+  * 你想清洁一点的你的分支，例如压缩commit 或者 rebase 他们到主分支为了更好的
+    的合并
 
-  That said, *never rewrite the history of the "master" branch* or any other
-  special branches (ie. used by production or CI servers).
+  最重要的，*不要重写你的 master 分支* 或者任何有特殊意义的分支(例如， 用来发布
+  的或者持续集成的)
 
-* Keep the history *clean* and *simple*. *Just before you merge* your branch:
+* 保持你的提交历史*干净* 和 *简单*，*在你 merget* 你的分支之前：
 
-    1. Make sure it conforms to the style guide and perform any needed actions
-       if it doesn't (squash/reorder commits, reword messages etc.)
+  1. 确保它符合 style guide 并且执行任何必要的操作如果他不符合的话，比如 squash
+     commmits, 重写你的 messages.
 
-    2. Rebase it onto the branch it's going to be merged to:
+  2. Rebase 这个分支到他将要合并的分支上。
 
-       ```shell
-       [my-branch] $ git fetch
-       [my-branch] $ git rebase origin/master
-       # then merge
-       ```
+     ```shell
+     [my-branch] $ git fetch
+     [my-branch] $ git rebase origin/master
+     # then merge
+     ```
+  这样有助于快速合并并且保持了一个干净的提交历史。
 
-       This results in a branch that can be applied directly to the end of the
-       "master" branch and results in a very simple history.
+  *(备注：这个策略更适合较短生命周期的分支，否则还是最好保持经常性的合并习惯
+  而不是 rebase)*
 
-       *(Note: This strategy is better suited for projects with short-running
-       branches. Otherwise it might be better to occassionally merge the
-       "master" branch instead of rebasing onto it.)*
-
-* If your branch includes more than one commit, do not merge with a
-  fast-forward:
+* 如果你的分支包含多过一个的 commmit , 不要使用快进模式。
 
   ```shell
   # good - ensures that a merge commit is created
@@ -211,27 +182,24 @@ request.
 
 ## Misc.
 
-* There are various workflows and each one has its strengths and weaknesses.
-  Whether a workflow fits your case, depends on the team, the project and your
-  development procedures.
+* 有大量的工作流，每一个都有好有坏。一个工作流是否符合你的案例，取决于你的团队,
+  项目，和你的开发规律。
 
-  That said, it is important to actually *choose* a workflow and stick with it.
+  也就是说，实事求是的 *选择* 合适的工作流并且坚持他。
 
-* *Be consistent.* This is related to the workflow but also expands to things
-  like commit messages, branch names and tags. Having a consistent style
-  throughout the repository makes it easy to understand what is going on by
-  looking at the log, a commit message etc.
+* *保持连续性*， 这涉及到从工作流到你的 commit 消息，分支名还有 tag. 在你的整个
+  仓库里保持一样的习惯有助于理解你在项目里到底做了什么。
 
-* *Test before you push.* Do not push half-done work.
+* *push 前测试*， 不要提交未完成的工作。
 
-* Use [annotated tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags) for
-  marking releases or other important points in the history.
+* 使用 [annotated tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags) 标记
+  release 版本或者其他重要的时间点。
 
   Prefer [lightweight tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) for personal use, such as to bookmark commits
   for future reference.
 
-* Keep your repositories at a good shape by performing maintenance tasks
-  occasionally, in your local *and* remote repositories:
+* 保持你的仓库有一个好的状态，便于随时执行维护任务。不仅在你的本地
+  还有远程的仓库。
 
   * [`git-gc(1)`](http://git-scm.com/docs/git-gc)
   * [`git-prune(1)`](http://git-scm.com/docs/git-prune)
@@ -247,3 +215,6 @@ International license.
 # Credits
 
 Agis Anastasopoulos / [@agisanast](https://twitter.com/agisanast) / http://agis.io
+
+# Translators
+Qi Chen / aseaday@gmail.com
