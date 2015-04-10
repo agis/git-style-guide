@@ -5,6 +5,10 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
 the [git man pages](http://git-scm.com/doc) and various practices popular
 among the community.
 
+Translations of the guide are available in the following languages:
+
+* [Chinese Simplified](https://github.com/aseaday/git-style-guide)
+
 If you feel like contributing, please do so! Fork the project and open a pull
 request.
 
