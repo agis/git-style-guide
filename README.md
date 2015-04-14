@@ -202,18 +202,18 @@ holds true that you should apply all of the above and clean up your branch
 
     2. Rebase it onto the branch it's going to be merged to:
 
-       ```shell
-       [my-branch] $ git fetch
-       [my-branch] $ git rebase origin/master
-       # then merge
-       ```
+      ```shell
+      [my-branch] $ git fetch
+      [my-branch] $ git rebase origin/master
+      # then merge
+      ```
 
-       This results in a branch that can be applied directly to the end of the
-       "master" branch and results in a very simple history.
+      This results in a branch that can be applied directly to the end of the
+      "master" branch and results in a very simple history.
 
-       *(Note: This strategy is better suited for projects with short-running
-       branches. Otherwise it might be better to occassionally merge the
-       "master" branch instead of rebasing onto it.)*
+      *(Note: This strategy is better suited for projects with short-running
+      branches. Otherwise it might be better to occassionally merge the
+      "master" branch instead of rebasing onto it.)*
 
 * If your branch includes more than one commit, do not merge with a
   fast-forward:
