@@ -1,12 +1,13 @@
 # Git Style Guide
 
 [*How to Get Your Change Into the Linux
-Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches)에서 영감을 받은 Git 스타일 가이드입니다.,
-[Git 공식문서](http://git-scm.com/doc)와 유명한 커뮤니티에서 경험한 것을 다룹니다.
-among the community.
+Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches)에서 영감을 받은 Git 스타일 가이드입니다.
+[Git 공식문서](http://git-scm.com/doc)와 유명한 커뮤니티에서 경험한 것을 적어놨습니다.
+
 
 이 가이드는 아래 언어로 번역되어 있습니다. 
 
+* [English](https://github.com/agis-/git-style-guide)
 * [Chinese (Simplified)](https://github.com/aseaday/git-style-guide)
 * [Chinese (Traditional)](https://github.com/JuanitoFatas/git-style-guide)
 * [Portuguese](https://github.com/guylhermetabosa/git-style-guide)
@@ -23,7 +24,6 @@ among the community.
 
 ## Branches (브랜치)
 
-* Choose *short* and *descriptive* names:
 * *간결하고* 잘 *설명될 수 있는* 이름을 선택하세요.
 
   ```shell
@@ -34,7 +34,8 @@ among the community.
   $ git checkout -b login_fix
   ```
 
-* 외부 서비스(예를 들어 깃헙)의 티켓(할일)에 해당하는 이름도 브랜치 이름으로 쓰는데 좋은 예시 중 하나입니다. 
+* 외부 서비스(예를 들어 깃헙)의 티켓(할일)에 해당하는 이름도 브랜치 이름으로 쓰는데 
+  좋은 예시 중 하나입니다. 
 
   ```shell
   # GitHub issue #15
@@ -43,7 +44,8 @@ among the community.
 
 * 단어를 분리하기 위해 *이음표(-)* 를 사용하세요.
 
-* 몇명의 사람들이 *같은* 기능들을 구현한다면, *개인적* 기능 브랜치와 *팀* 기능 브랜치를 가지고 작업하는데 편리 할 수 있습니다. 아래와 같은 명명 규칙을 사용해 보세요.
+* 몇명의 사람들이 *같은* 기능들을 구현한다면, *개인적* 기능 브랜치와 *팀* 기능 브랜치를 가지고
+  작업하는데 편리 할 수 있습니다. 아래와 같은 명명 규칙을 사용해 보세요.
 
   ```shell
   $ git checkout -b feature-a/master # team-wide branch
@@ -51,8 +53,8 @@ among the community.
   $ git checkout -b feature-a/nick   # Nick's personal branch
   ```
 
-  개인이 작업한 브랜치는 계속해서 팀이 구현하는 브랜치로 합쳐지고 나중 "master"와 합쳐질 것입니다. 
-  (see ["Merging"](#merging)).
+  개인이 작업한 브랜치는 계속해서 팀이 구현하는 브랜치로 합쳐지고 나중 "master"와 
+  합쳐질 것입니다. (see ["Merging"](#merging)).
 
 * 브랜치가 머지된 이후에는 (남겨둬야 할 특별한 이유가 없다면) 리파지토리에서 삭제합니다. 
 
@@ -230,4 +232,4 @@ among the community.
 
 # Credits
 
-chris / [@agisanast](https://twitter.com/agisanast) / http://agis.io
+chris 
