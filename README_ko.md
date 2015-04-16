@@ -141,60 +141,54 @@ among the community.
   비슷하게, *커밋 B*에서 발생된 버그를 *커밋 A*에서 풀었다면 *커밋 A*에서 
   그것을 언급해야 합니다. 
 
-* 만약   
-* If a commit is going to be squashed to another commit use the `--squash` and
-  `--fixup` flags respectively, in order to make the intention clear:
+* 만약 다른 커밋에 밀어넣으려면 `--squash`를 사용하고, 
+  의도를 확실하게 표시하고자 한다면 `--fixup`을 사용하세요.
 
   ```shell
   $ git commit --squash f387cab2
   ```
-
-  *(Tip: Use the `--autosquash` flag when rebasing. The marked commits will be
-  squashed automatically.)*
+  
+  *(Tip: 리베이스 할때 `--autosquash`를 사용하세요. 표시된 커밋은 자동으로 밀어 넣어집니다.)*
 
 ## Merging (머지)
 
-* **Do not rewrite published history.** The repository's history is valuable in
-  its own right and it is very important to be able to tell *what actually
-  happened*. Altering published history is a common source of problems for
-  anyone working on the project.
+* **배포된 이력(History)를 재 기록하지 마세요** 리파지토리의 이력은 제대로 되어 있을때
+  가치있습니다. 그리고 *어떤 일이 실제로 일어난는가*를 말하는 것이 매우 중요합니다. 
+  배포된 이력을 수정한다는 것은 프로젝트에서 일하는 모두에게 문제가 됩니다. 
 
-* However, there are cases where rewriting history is legitimate. These are
-  when:
+* 그러나, 이력을 다시 기록해도 되는 경우도 있습니다. 이런 경우는 
+  
+  * 아직 리뷰되지 않았고 혼자서만 개발하는 브랜치인 경우. 
+  
+  * 브랜치를 깔끔하게 정리하고 (예를 들어 squash commit같은) 나중에 머지하기 위해 
+    "master"를 리베이스 하는 경우. 
+  
+  이말은 *절대 "master"브랜치나 다른 특별한 브랜치의 이력을 재기록하지 말라*는 것입니다.
+  (예를 들면, 운영하는데 사용되거나, CI 서버에서 사용하는 )
 
-  * You are the only one working on the branch and it is not being reviewed.
+* 이력을 "깔끔"하고 "단순"하게 유지하세요. 브랜치를 "머지하기 바로 직전에"  
 
-  * You want to tidy up your branch (eg. squash commits) and/or rebase it onto
-    the "master" in order to merge it later.
-
-  That said, *never rewrite the history of the "master" branch* or any other
-  special branches (ie. used by production or CI servers).
-
-* Keep the history *clean* and *simple*. *Just before you merge* your branch:
-
-    1. Make sure it conforms to the style guide and perform any needed actions
-       if it doesn't (squash/reorder commits, reword messages etc.)
-
-    2. Rebase it onto the branch it's going to be merged to:
-
+    1. 이력이 관습을 따르고 있는지, 필요하지 않은 행위는 없는지 확인하세요.
+       (squash/reorder commits, reword messages etc.) 
+    
+    2. 머지될 브랜치를 리베이스 하세요.
+    
        ```shell
        [my-branch] $ git fetch
        [my-branch] $ git rebase origin/master
        # then merge
        ```
-
-       This results in a branch that can be applied directly to the end of the
-       "master" branch and results in a very simple history.
-
-       *(Note: This strategy is better suited for projects with short-running
-       branches. Otherwise it might be better to occassionally merge the
-       "master" branch instead of rebasing onto it.)*
-
-* If your branch includes more than one commit, do not merge with a
-  fast-forward:
+       
+       이 결과는 "master"브랜치의 맨뒤에 이력을 붙여서 매우 간단한 
+       이력을 보여주게 됩니다. 
+       
+       *(노트: 이러한 전략은 짧은동안 브랜치를 유지하는 프로젝트에 적합합니다. 
+       한편으로 리베이스하는 것보다 "master"브랜치에 머지하는 것이 나은 경우도 종종 있습니다.
+       
+* 만약 브랜치에 하나 이상의 커밋이 있다면, fast-forward 머지는 하지 마세요.
 
   ```shell
-  # good - ensures that a merge commit is created
+  # good - 머지 커밋이 반드시 일어납니다. 
   $ git merge --no-ff my-branch
 
   # bad
@@ -203,27 +197,26 @@ among the community.
 
 ## Misc. (기타)
 
-* There are various workflows and each one has its strengths and weaknesses.
-  Whether a workflow fits your case, depends on the team, the project and your
-  development procedures.
+* 다양한 workflow들이 존재하고 각각이 강점과 약점을 가지고 있습니다. 
+  어떤 workflow가 현재 상황에 적합할지는, 팀, 프로젝트 그리고 개발 절차에 
+  따라 정해져야 합니다. 
 
-  That said, it is important to actually *choose* a workflow and stick with it.
+  어떤 workflow를 *선택*하고 계속할지는 매우 중요합니다. 
 
-* *Be consistent.* This is related to the workflow but also expands to things
-  like commit messages, branch names and tags. Having a consistent style
-  throughout the repository makes it easy to understand what is going on by
-  looking at the log, a commit message etc.
+* *동일한 규칙을 사용하세요.* 이것은 workflow와 연관되있을 뿐 아니라 커밋 메시지를 
+  작성하는 것, 브랜치 명이나 태그를 달때도 확장할 수 있습니다. 리파지토리 전체에 
+  동일한 규칙을 가지는 것은 커및 메시지또는 로그를 찾을 때, 이해하기 쉽게 만들어 줍니다. 
 
-* *Test before you push.* Do not push half-done work.
+* *푸시하기 전에 테스트 하세요.* 완료되지 않은 일을 푸시하지 마세요. 
 
-* Use [annotated tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags) for
-  marking releases or other important points in the history.
+* 
+* 릴리즈나 중요한 이력을 기록하기 위해 [annotated tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags)를 사용하세요.
 
-  Prefer [lightweight tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) for personal use, such as to bookmark commits
-  for future reference.
+  개인적일 때는 [lightweight tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags)
+  즉, 나중 참조를 위한 북마크 커밋 같은것이 바람직합니다. 
 
-* Keep your repositories at a good shape by performing maintenance tasks
-  occasionally, in your local *and* remote repositories:
+* 종종 성능 유지 작업을 통해 리파지토리가 좋은 모습을 가지도록 유지하세요. 
+  그것이 로컬 리파지토리이건, 원격 리파지토리건 간에 
 
   * [`git-gc(1)`](http://git-scm.com/docs/git-gc)
   * [`git-prune(1)`](http://git-scm.com/docs/git-prune)
@@ -233,8 +226,7 @@ among the community.
 
 ![cc license](http://i.creativecommons.org/l/by/4.0/88x31.png)
 
-This work is licensed under a Creative Commons Attribution 4.0
-International license.
+이 문서는 Creative Commons Attribution 4.0 International license를 따릅니다.
 
 # Credits
 
