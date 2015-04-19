@@ -9,6 +9,7 @@ Translations of the guide are available in the following languages:
 
 * [Chinese (Simplified)](https://github.com/aseaday/git-style-guide)
 * [Chinese (Traditional)](https://github.com/JuanitoFatas/git-style-guide)
+* [Japanese](https://github.com/objectx/git-style-guide)
 * [Portuguese](https://github.com/guylhermetabosa/git-style-guide)
 
 If you feel like contributing, please do so! Fork the project and open a pull
