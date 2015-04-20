@@ -12,6 +12,7 @@ Translations of the guide are available in the following languages:
 * [Japanese](https://github.com/objectx/git-style-guide)
 * [Korean](https://github.com/ikaruce/git-style-guide)
 * [Portuguese](https://github.com/guylhermetabosa/git-style-guide)
+* [Ukrainian](https://github.com/denysdovhan/git-style-guide)
 
 If you feel like contributing, please do so! Fork the project and open a pull
 request.
