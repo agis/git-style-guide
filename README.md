@@ -13,12 +13,13 @@ Translations of the guide are available in the following languages:
 * [Japanese](https://github.com/objectx/git-style-guide)
 * [Korean](https://github.com/ikaruce/git-style-guide)
 * [Portuguese](https://github.com/guylhermetabosa/git-style-guide)
+* [Thai](https://github.com/zondezatera/git-style-guide)
 * [Ukrainian](https://github.com/denysdovhan/git-style-guide)
 
 If you feel like contributing, please do so! Fork the project and open a pull
 request.
 
-# Table of contents
+# ตารางสารบัญ
 
 1. [Branches](#branches)
 2. [Commits](#commits)
@@ -31,10 +32,10 @@ request.
 * Choose *short* and *descriptive* names:
 
   ```shell
-  # good
+  # ควรใช้
   $ git checkout -b oauth-migration
 
-  # bad - too vague
+  # ไม่ควรใช้ - กำกวมเกินไป
   $ git checkout -b login_fix
   ```
 
@@ -92,10 +93,10 @@ request.
 * Use the editor, not the terminal, when writing a commit message:
 
   ```shell
-  # good
+  # ควรใช้
   $ git commit
 
-  # bad
+  # ไม่ควรใช้
   $ git commit -m "Quick fix"
   ```
 
@@ -110,10 +111,10 @@ request.
   *title*:
 
   ```shell
-  # good - imperative present tense, capitalized, fewer than 50 characters
+  # ควรใช้ - imperative present tense, capitalized, fewer than 50 characters
   Mark huge records as obsolete when clearing hinting faults
 
-  # bad
+  # ไม่ควรใช้
   fixed ActiveModel::Errors deprecation messages failing when AR was used outside of Rails.
   ```
 
@@ -209,10 +210,10 @@ request.
   fast-forward:
 
   ```shell
-  # good - ensures that a merge commit is created
+  # ควรใช้ - เพื่อให้แน่ใจว่าการmerge จะถูกสร้างขึ้น
   $ git merge --no-ff my-branch
 
-  # bad
+  # ไม่ควรใช้
   $ git merge my-branch
   ```
 
