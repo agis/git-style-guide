@@ -1,11 +1,10 @@
-# Git Style Guide
+# คู่มือสไตล์การเขียน Git
 
-This is a Git Style Guide inspired by [*How to Get Your Change Into the Linux
+คู่มือสไตล์การเขียน Git นี้ได้รับแรงบันดาลใจมาจาก [*How to Get Your Change Into the Linux
 Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
-the [git man pages](http://git-scm.com/doc) and various practices popular
-among the community.
+[git man pages](http://git-scm.com/doc) และ ข้อที่ควรปฏิบัติที่เป็นนิยมในชุมชน
 
-Translations of the guide are available in the following languages:
+คู่มือที่มีการผ่านการแปลภาษามีภาษาดังต่อไปนี้ :
 
 * [Chinese (Simplified)](https://github.com/aseaday/git-style-guide)
 * [Chinese (Traditional)](https://github.com/JuanitoFatas/git-style-guide)
@@ -16,8 +15,7 @@ Translations of the guide are available in the following languages:
 * [Thai](https://github.com/zondezatera/git-style-guide)
 * [Ukrainian](https://github.com/denysdovhan/git-style-guide)
 
-If you feel like contributing, please do so! Fork the project and open a pull
-request.
+ถ้าคุณรู้สึกว่าอยากจะมีส่วนร่วมกับเรา โปรดทำแบบนี้! Fork โปรเจ็คนี้ และเปิด pull request
 
 # ตารางสารบัญ
 
@@ -29,29 +27,28 @@ request.
 
 ## Branches
 
-* Choose *short* and *descriptive* names:
+* ควรเลือกชื่อที่ *สั้น* และ *บอกรายละเอียดเฉพาะตัวได้* :
 
   ```shell
   # ควรใช้
   $ git checkout -b oauth-migration
 
-  # ไม่ควรใช้ - กำกวมเกินไป
+  # ไม่ควรใช้ - เพราะกำกวมเกินไป
   $ git checkout -b login_fix
   ```
 
-* Identifiers from corresponding tickets in an external service (eg. a GitHub
-  issue) are also good candidates for use in branch names. For example:
+* ระบุถึง tickets ที่ตรงกันกับใน service ภายนอก (ตัวอย่างเช่น GitHub
+  issue) นอกจากนี้ยังมีรูปแบบที่เหมาะ สำหรับการใช้งานใน branch . ยกตัวอย่างเช่น:
 
   ```shell
   # GitHub issue #15
   $ git checkout -b issue-15
   ```
 
-* Use *dashes* to separate words.
+* ควรใช้ *ขีดกลาง( - )* เพื่อแยกคำออกจากกัน
 
-* When several people are working on the *same* feature, it might be convenient
-  to have *personal* feature branches and a *team-wide* feature branch.
-  Use the following naming convention:
+* ในขณะที่มีคนหลายๆคนทำงานอยู่บนฟีเจอร์ที่*เหมือนกัน* มันอาจจะมีแนวทางที่ง่ายและสะดวกสำหรับ branches ส่วน ฟีเจอร์ *สำหรับบุคคล* และ *สำหรับทีม*
+  ซึ่งควรใช้การตั้งชื่อแบบนี้สำหรับแบ่งแยก:
 
   ```shell
   $ git checkout -b feature-a/master # team-wide branch
@@ -59,13 +56,12 @@ request.
   $ git checkout -b feature-a/nick   # Nick's personal branch
   ```
 
-  Merge at will the personal branches to the team-wide branch (see ["Merging"](#merging)).
-  Eventually, the team-wide branch will be merged to "master".
+  Merge ส่วน branches แต่ละบุคคล ไปยังส่วน branch สำหรับทีม (ดูส่วน ["Merging"](#merging))
+  และสุดท้าย  branch สำหรับทีม จะถูก merged เข้าไปรวมกับ "master"
 
-* Delete your branch from the upstream repository after it's merged (unless
-  there is a specific reason not to).
+* ลบ branch ออกจาก upstream repository หลังจาก ที่มัน merged เสร็จเรียบร้อย (ยกเว้นแต่จะมีเหตุผล)
 
-  Tip: Use the following command while being on "master", to list merged
+  ข้อแนะนำ: ใช้คำสั่งต่อไปเมื่ออยู่บน "master" เพื่อแสดงรายการ merged
   branches:
 
   ```shell
@@ -90,7 +86,7 @@ request.
 
 ### Messages
 
-* Use the editor, not the terminal, when writing a commit message:
+* ควรใช้พวก editor ต่างๆ ในการเขียนข้อความสำหรับ commit ไม่แนะนำให้ใช้ terminal :
 
   ```shell
   # ควรใช้
@@ -165,8 +161,9 @@ request.
   $ git commit --squash f387cab2
   ```
 
-  *(Tip: Use the `--autosquash` flag when rebasing. The marked commits will be
+  *(ข้อแนะนำ: ควรใช้ `--autosquash` flag when rebasing. The marked commits will be
   squashed automatically.)*
+
 
 ## Merging
 
@@ -210,7 +207,7 @@ request.
   fast-forward:
 
   ```shell
-  # ควรใช้ - เพื่อให้แน่ใจว่าการmerge จะถูกสร้างขึ้น
+  # ควรใช้ - เพื่อให้แน่ใจว่าการ merge จะถูกสร้างขึ้น
   $ git merge --no-ff my-branch
 
   # ไม่ควรใช้
@@ -254,3 +251,8 @@ International license.
 # Credits
 
 Agis Anastasopoulos / [@agisanast](https://twitter.com/agisanast) / http://agis.io
+
+# Translator
+
+Kitti Pariyaakkarakun 
+
