@@ -38,14 +38,15 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
   ```
 
 * ระบุถึง tickets ที่ตรงกันกับใน service ภายนอก (ตัวอย่างเช่น GitHub
-  issue) นอกจากนี้ยังมีรูปแบบที่เหมาะ สำหรับการใช้งานใน branch . ยกตัวอย่างเช่น:
+  issue) นอกจากนี้ยังมีรูปแบบที่เหมาะ สำหรับการใช้งานใน branch
+  ยกตัวอย่างเช่น:
 
   ```shell
   # GitHub issue #15
   $ git checkout -b issue-15
   ```
 
-* ควรใช้ *ขีดกลาง( - )* เพื่อแยกคำออกจากกัน
+* ควรใช้ *ขีดกลาง ( - )* เพื่อแยกคำออกจากกัน
 
 * ในขณะที่มีคนหลายๆคนทำงานอยู่บนฟีเจอร์ที่*เหมือนกัน* มันอาจจะมีแนวทางที่ง่ายและสะดวกสำหรับ branches ส่วน ฟีเจอร์ *สำหรับบุคคล* และ *สำหรับทีม*
   ซึ่งควรใช้การตั้งชื่อแบบนี้สำหรับแบ่งแยก:
@@ -70,19 +71,16 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
 
 ## Commits
 
-* Each commit should be a single *logical change*. Don't make several
-  *logical changes* in one commit. For example, if a patch fixes a bug and
-  optimizes the performance of a feature, split it into two separate commits.
+* ทุกๆ commit ควรจะเป็น *การเปลี่ยนแปลงโลจิกแบบเจาะจง*. อย่ารวมเอา
+  *หลายๆการเปลี่ยนเปลี่ยนโลจิก* ไว้ใน commit เดียว ตัวอย่างเช่น ถ้าสมมุติ มี patch ในแก้ไข bug และ
+  optimizes ประสิทธิภาพของ feature ควรแบ่งมันออกเป็น 2 commits
 
-* Don't split a single *logical change* into several commits. For example,
-  the implementation of a feature and the corresponding tests should be in the
-  same commit.
+* อย่าแบ่งการเปลียนแปง *แบบเจาะจง* ออกเป็นหลายๆ commits. ตัวอย่างเช่น
+  ในการ implementation ของ feature และ การทดสอบเป้นส่วนๆ ควรจะอยู่ใน commit เดียวกัน
 
-* Commit *early* and *often*. Small, self-contained commits are easier to
-  understand and revert when something goes wrong.
+* ควรจะมี commit *เนิ่นๆ* และ *บ่อยๆ* ในจุดเล็กๆน้อย ในตัวของมันเองเพื่อให้ง่ายต่อการเข้าใจ และ สามารถย้อนกลับได้เมื่อมีอะไรผิดพลาด
 
-* Commits should be ordered *logically*. For example, if *commit X* depends
-  on changes done in *commit Y*, then *commit Y* should come before *commit X*.
+* ในการ Commits ควรจะมีการเรียงลำดับ *อย่างมีเหตุผล*. ตัวอย่างเช่น ถ้า *commit X* ีมการเปลียนแปลงในส่วน *commit Y* ซึ้งดังนั้น *commit Y* ควรจะมาก่อน *commit X*.
 
 ### Messages
 
