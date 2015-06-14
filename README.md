@@ -72,15 +72,14 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
 ## Commits
 
 * ทุกๆ commit ควรจะเป็น *การเปลี่ยนแปลงโลจิกแบบเจาะจง*. อย่ารวมเอา
-  *หลายๆการเปลี่ยนเปลี่ยนโลจิก* ไว้ใน commit เดียว ตัวอย่างเช่น ถ้าสมมุติ มี patch ในแก้ไข bug และ
-  optimizes ประสิทธิภาพของ feature ควรแบ่งมันออกเป็น 2 commits
+  *หลายๆการเปลี่ยนเปลี่ยนโลจิก* ไว้ใน commit เดียว ตัวอย่างเช่น ถ้าสมมุติ มี patch ในแก้ไข bug และ optimizes ประสิทธิภาพของ feature ควรแบ่งมันออกเป็น 2 commits
 
 * อย่าแบ่งการเปลียนแปง *แบบเจาะจง* ออกเป็นหลายๆ commits. ตัวอย่างเช่น
   ในการ implementation ของ feature และ การทดสอบเป้นส่วนๆ ควรจะอยู่ใน commit เดียวกัน
 
 * ควรจะมี commit *เนิ่นๆ* และ *บ่อยๆ* ในจุดเล็กๆน้อย ในตัวของมันเองเพื่อให้ง่ายต่อการเข้าใจ และ สามารถย้อนกลับได้เมื่อมีอะไรผิดพลาด
 
-* ในการ Commits ควรจะมีการเรียงลำดับ *อย่างมีเหตุผล*. ตัวอย่างเช่น ถ้า *commit X* ีมการเปลียนแปลงในส่วน *commit Y* ซึ้งดังนั้น *commit Y* ควรจะมาก่อน *commit X*.
+* ในการ Commits ควรจะมีการเรียงลำดับ *อย่างมีเหตุผล*. ตัวอย่างเช่น ถ้า *commit X* มีการเปลียนแปลงในส่วน *commit Y* ดังนั้น *commit Y* ควรจะมาก่อน *commit X*.
 
 ### Messages
 
@@ -94,31 +93,27 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
   $ git commit -m "Quick fix"
   ```
 
-  Committing from the terminal encourages a mindset of having to fit everything
-  in a single line which usually results in non-informative, ambiguous commit
-  messages.
+  เมื่อมีการ commit จาก terminal จะส่งผลให้เกิดแนวคิดที่ว่าให้ทุกสิ่งอย่างอยู่ใน บรรทัดเดียว ทำให้อาจจะเกิดผลกระทบเกิดความไม่ชัดเจนของข้อความที่ส่งไป
 
-* The summary line (ie. the first line of the message) should be
-  *descriptive* yet *succinct*. Ideally, it should be no longer than
-  *50 characters*. It should be capitalized and written in imperative present
+* บรรทัดสรุป (อาทิเช่น บรรทัดแรกของข้อความ) ควรจะมี
+  *การบรรยาย* แต่อย่าง *รวบรัด*. มันจะเป็นดี ถ้ามันไม่ควรที่จะยาวเกินไปกว่า
+  *50 ตัวอักษร*. It should be capitalized and written in imperative present
   tense. It should not end with a period since it is effectively the commit
   *title*:
 
   ```shell
-  # ควรใช้ - imperative present tense, capitalized, fewer than 50 characters
+  # ควรใช้ - ตามความจำเป็นในขณะนั้น ไม่เกินกว่า 50 ตัวอีกษร
   Mark huge records as obsolete when clearing hinting faults
 
   # ไม่ควรใช้
   fixed ActiveModel::Errors deprecation messages failing when AR was used outside of Rails.
   ```
 
-* After that should come a blank line followed by a more thorough
-  description. It should be wrapped to *72 characters* and explain *why*
-  the change is needed, *how* it addresses the issue and what *side-effects*
-  it might have.
+* หลังจากนั้นควรมาพร้อมบรรทัดว่างตามด้วยอธิบายเพิ่มเติมอย่างละเอียด
+  มันควรจะประกอบไปด้วย *72 ตัวอักษร* และ การอธิบายเหตุผลว่า *ทำไม* การเปลี่ยนนี้ถึงจำเป็น และ
+  *ทำอย่างไร* ตามจุดประสงค์ และ*ผลกระทบ* ที่อาจจะมี
 
-  It should also provide any pointers to related resources (eg. link to the
-  corresponding issue in a bug tracker):
+  นอกจากนี้ยังควรให้คำแนะนำต่างๆให้ไปแหล่งข้อมูลอื่นๆที่เกี่ยวข้อง ( อาทิเช่น การอ้างอิงไปยังปัญหาที่เกี่ยวเนื่องกันในจุดบกพร่อง ):
 
   ```shell
   Short (50 chars or fewer) summary of changes
@@ -142,12 +137,11 @@ Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
   Source http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
   ```
 
-  Ultimately, when writing a commit message, think about what you would need
-  to know if you run across the commit in a year from now.
+  ในท้ายที่สุดแล้ว เมื่อ เขียนข้อความสำหรับ commit ต้องคิดเกี่ยวกับสิ่งที่ต้องการถ้ารู้ว่า 
+  คุณต้องทำงานใน commit ในหนึ่งปีจากนี้ไป
 
-* If a *commit A* depends on another *commit B*, the dependency should be
-  stated in the message of *commit A*. Use the commit's hash when referring to
-  commits.
+* ถ้า *commit A* ขึ้นอยกับ *commit B* ควรจะต้องถูกแจ้งไว้กับข้อความของ *commit A*
+  Use the commit's hash when referring to commits.
 
   Similarly, if *commit A* solves a bug introduced by *commit B*, it should
   be stated in the message of *commit A*.
