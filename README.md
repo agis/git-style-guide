@@ -89,6 +89,11 @@ request.
 * Commits should be ordered *logically*. For example, if *commit X* depends
   on changes done in *commit Y*, then *commit Y* should come before *commit X*.
 
+Note: While working alone on a local branch that *has not yet been pushed*, it's
+fine to use commits as temporary snapshots of your work. However, it still
+holds true that you should apply all of the above and clean up your branch
+*before* pushing it.
+
 ### Messages
 
 * Use the editor, not the terminal, when writing a commit message:
