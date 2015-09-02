@@ -247,7 +247,7 @@ holds true that you should apply all of the above and clean up your branch
   for personal use, such as to bookmark commits for future reference.
 
 * Keep your repositories at a good shape by performing maintenance tasks
-  occasionally, in your local *and* remote repositories:
+  occasionally:
 
   * [`git-gc(1)`](http://git-scm.com/docs/git-gc)
   * [`git-prune(1)`](http://git-scm.com/docs/git-prune)
