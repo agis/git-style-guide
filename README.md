@@ -94,8 +94,7 @@ request.
 
 Note: While working alone on a local branch that *has not yet been pushed*, it's
 fine to use commits as temporary snapshots of your work. However, it still
-holds true that you should apply all of the above and clean up your branch
-*before* pushing it.
+holds true that you should apply all of the above *before* pushing it.
 
 ### Messages
 
