@@ -6,7 +6,7 @@ the [git man pages](http://git-scm.com/doc) and various practices popular
 among the community.
 
 Translations are available in the following languages:
-
+dep
 * [Chinese (Simplified)](https://github.com/aseaday/git-style-guide)
 * [Chinese (Traditional)](https://github.com/JuanitoFatas/git-style-guide)
 * [French](https://github.com/pierreroth64/git-style-guide)
@@ -159,12 +159,12 @@ holds true that you should apply all of the above *before* pushing it.
   Ultimately, when writing a commit message, think about what you would need
   to know if you run across the commit in a year from now.
 
-* If a *commit A* depends on another *commit B*, the dependency should be
-  stated in the message of *commit A*. Use the commit's hash when referring to
+* If a *commit A* depends on *commit B*, the dependency should be
+  stated in the message of *commit A*. Use the SHA1 when referring to
   commits.
 
   Similarly, if *commit A* solves a bug introduced by *commit B*, it should
-  be stated in the message of *commit A*.
+  also be stated in the message of *commit A*.
 
 * If a commit is going to be squashed to another commit use the `--squash` and
   `--fixup` flags respectively, in order to make the intention clear:
