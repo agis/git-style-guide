@@ -262,4 +262,4 @@ International license](https://creativecommons.org/licenses/by/4.0/).
 # Credits
 
 Agis Anastasopoulos / [@agisanast](https://twitter.com/agisanast) / http://agis.io
-... and [contributors](https://github.com/agis-/git-style-guide/issues?utf8=%E2%9C%93&q=)!
+... and [contributors](https://github.com/agis-/git-style-guide/graphs/contributors)!
