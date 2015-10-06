@@ -181,7 +181,7 @@ holds true that you should apply all of the above *before* pushing it.
   *(Tip: Use the `--autosquash` flag when rebasing. The marked commits will be
   squashed automatically.)*
 
-## Mergingmer
+## Merging
 
 * **Do not rewrite published history.** The repository's history is valuable in
   its own right and it is very important to be able to tell *what actually
