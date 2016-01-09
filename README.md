@@ -134,7 +134,7 @@ holds true that you should apply all of the above *before* pushing it.
   It should also provide any pointers to related resources (eg. link to the
   corresponding issue in a bug tracker):
 
-  ```shell
+  ```text
   Short (50 chars or fewer) summary of changes
 
   More detailed explanatory text, if necessary. Wrap it to
