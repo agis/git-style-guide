@@ -6,7 +6,7 @@ the [git man pages](http://git-scm.com/doc) and various practices popular
 among the community.
 
 Translations are available in the following languages:
-dep
+
 * [Chinese (Simplified)](https://github.com/aseaday/git-style-guide)
 * [Chinese (Traditional)](https://github.com/JuanitoFatas/git-style-guide)
 * [French](https://github.com/pierreroth64/git-style-guide)
