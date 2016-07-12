@@ -1,13 +1,13 @@
-# Git Style Guide
+#Git Model Rehberi
 
-This is a Git Style Guide inspired by [*How to Get Your Change Into the Linux
+Bu model rehberi [*How to Get Your Change Into the Linux
 Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
-the [git man pages](http://git-scm.com/doc) and various practices popular
-among the community.
+the [git man pages](http://git-scm.com/doc), ve git topluluklarında popüler olan çeşitli uygulamalardan
+esinlenerek hazırlanmıştır.
 
-Translations are available in the following languages:
+Farklı dillerdeki çevirileri aşagıda mevcuttur:
 
-* [Chinese (Simplified)](https://github.com/aseaday/git-style-guide)
+- [Chinese (Simplified)](https://github.com/aseaday/git-style-guide)
 * [Chinese (Traditional)](https://github.com/JuanitoFatas/git-style-guide)
 * [French](https://github.com/pierreroth64/git-style-guide)
 * [Greek](https://github.com/grigoria/git-style-guide)
@@ -17,249 +17,272 @@ Translations are available in the following languages:
 * [Thai](https://github.com/zondezatera/git-style-guide)
 * [Ukrainian](https://github.com/denysdovhan/git-style-guide)
 
-If you feel like contributing, please do so! Fork the project and open a pull
-request.
+Eger sizde bu projeye katkıda bulunmak isterseniz, projeyi fork edin ve
+bir pull request açın.
 
-# Table of contents
+# İçindekiler
 
-1. [Branches](#branches)
+1. [Dallar(Branches)](#dallar)
+
 2. [Commits](#commits)
-  1. [Messages](#messages)
-3. [Merging](#merging)
-4. [Misc.](#misc)
 
-## Branches
+	1. [Mesajlar](#mesajlar)
 
-* Choose *short* and *descriptive* names:
+3.[Birleştirme(Merging)](#birleştirme)
 
+4.[Misc.](#misc)
+
+## Dallar(Branches)
+
+* *Kisa* ve *açıklayıcı* isimler seçin.
+	
   ```shell
-  # good
+  # İyi örnek
   $ git checkout -b oauth-migration
-
-  # bad - too vague
-  $ git checkout -b login_fix
+	
+  # Kötü örnek - Fazla belirsiz
+  $ git checkout -b login\_fix
   ```
 
-* Identifiers from corresponding tickets in an external service (eg. a GitHub
-  issue) are also good candidates for use in branch names. For example:
+* Bir harici servisteki (Örn. Bir Github sorunu) ilgili Ticket
+  tanımlayıcılarıda dallar(branch) ismi için uygun adaylardır. Örneğin;
+	
+  ```shell
+  #GitHub Issue #15
+  $git checkout -b issue-15
+  ```
+
+* Kelimeleri ayırmak için *tire* kullanın.
+
+* Birden fazla kişi aynı özellik uzerinde çalışırken bir tane takım için
+  dal , bir tane de kişisel dal yaratılmasi daha elverişli olacaktir.
+  Aşagıdaki isim düzenini kullanabilirsiniz:
 
   ```shell
-  # GitHub issue #15
-  $ git checkout -b issue-15
+  $ git checkout -b feature-a/master # takim icin dal
+  $ git checkout -b feature-a/cuneyt # Cüneyt’in kişisel dal’ı
+  $ git checkout -b feature-a/mert   # Mert’in kişisel dal’ı
   ```
 
-* Use *dashes* to separate words.
+  Takım için yaratılan dalın kişisel dallar ile birleşmesi
+  (bkz.”Merging”). Nihayetinde, takım dalı “master” ile birleşecektir.
 
-* When several people are working on the *same* feature, it might be convenient
-  to have *personal* feature branches and a *team-wide* feature branch.
-  Use the following naming convention:
+* Eger silmemeniz için özel bir neden yok ise, birleşme sağlandıktan
+  sonra ana depodan dalınızı siliniz.
 
-  ```shell
-  $ git checkout -b feature-a/master # team-wide branch
-  $ git checkout -b feature-a/maria  # Maria's personal branch
-  $ git checkout -b feature-a/nick   # Nick's personal branch
-  ```
-
-  Merge at will the personal branches to the team-wide branch (see ["Merging"](#merging)).
-  Eventually, the team-wide branch will be merged to "master".
-
-* Delete your branch from the upstream repository after it's merged, unless
-  there is a specific reason not to.
-
-  Tip: Use the following command while being on "master", to list merged
-  branches:
+  Not: “master” dalında iken birleşmiş dalları listelemek için aşagıdaki
+  komutu kullanınız.
 
   ```shell
   $ git branch --merged | grep -v "\*"
   ```
 
-## Commits
+## COMMITS
 
-* Each commit should be a single *logical change*. Don't make several
-  *logical changes* in one commit. For example, if a patch fixes a bug and
-  optimizes the performance of a feature, split it into two separate commits.
+* Her bir commit de tek bir mantıksal degişiklik olmali. Bir commit’in
+  içinde birden fazla *mantıksal değişiklik* yapmayın. Örneğin; eger bir
+  yama bir bug’ı düzeltip aynı zamanda performansıda arttırıyor ise, onu
+  iki farklı commit şeklinde yazın.
 
-  *Tip: Use `git add -p` to interactively stage specific portions of the
-  modified files.*
+  *Not: Değiştirilmiş dosyalar daki belirli kısımları interaktif bir
+  biçimde görüntülemek için* git add -p komutunu kullanınız.
 
-* Don't split a single *logical change* into several commits. For example,
-  the implementation of a feature and the corresponding tests should be in the
-  same commit.
+* Tek bir mantıksal değişikliği birden fazla commitlere ayırmayın.
+  Örneğin, bir özelliğin uygulaması ve onun testleri aynı commit içinde
+  olmalı.
 
-* Commit *early* and *often*. Small, self-contained commits are easier to
-  understand and revert when something goes wrong.
+* Erken ve sık aralıklarla commit edin. Küçük ve bagımsız commitlerin
+  anlaşılması ve eski haline döndürülmesi bir şeylerin yanlış gitmesi
+  durumunda daha kolaydır.
 
-* Commits should be ordered *logically*. For example, if *commit X* depends
-  on changes done in *commit Y*, then *commit Y* should come before *commit X*.
+* Commitler mantıksal bir biçimde sıralanmalıdır. Örneğin, eğer *X commiti*
+*Y comitinin* içinde yapılan değişiklere baglı ise, *Y commiti* *X
+commitinden* önce gelmeli.
 
-Note: While working alone on a local branch that *has not yet been pushed*, it's
-fine to use commits as temporary snapshots of your work. However, it still
-holds true that you should apply all of the above *before* pushing it.
+Not: *Henüz push edilmemiş local* bir dalda tek başınıza çalışıyor iken,
+Commit ile çalışmanızın geçici bir anlık kopyasını almanızda bir sorun
+yoktur. Fakat her halükarda dalınızı *push etmeden* once yukarıdakileri
+uygulamanız gerekicektir.
 
-### Messages
+### Mesajlar
 
-* Use the editor, not the terminal, when writing a commit message:
+* Commit mesajı yazarken terminal değil editör kullanın.
 
   ```shell
-  # good
+  # İyi örnek
   $ git commit
 
-  # bad
+  # Kötü örnek
   $ git commit -m "Quick fix"
   ```
 
-  Committing from the terminal encourages a mindset of having to fit everything
-  in a single line which usually results in non-informative, ambiguous commit
-  messages.
+  Terminalden commit etmek herşeyi tek bir komut satırına sıgdırdırmaya
+  yönlendiren bir zihniyet oluşturur ki buda genelde bilgilendirici
+  olamayan ve belirsiz commit mesajların ortaya çıkmasına neden olur.
 
-* The summary line (ie. the first line of the message) should be
-  *descriptive* yet *succinct*. Ideally, it should be no longer than
-  *50 characters*. It should be capitalized and written in imperative present
-  tense. It should not end with a period since it is effectively the commit
-  *title*:
+* Özet satırı (mesajın ilk satırı) *açıklayıcı* ve aynı zamanda *kısa*
+  olmalıdır. İdeali bu satırın *50 karakterden* fazla olmamasıdır. Aynı
+  zamanda büyük harf ile başlanmalı şimdiki zaman ve emir kipi
+  kullanılmalıdır.
 
   ```shell
-  # good - imperative present tense, capitalized, fewer than 50 characters
-  Mark huge records as obsolete when clearing hinting faults
+  # İyi Örnek – Şimdiki zaman, Emir kipi, Büyük harf, 50 karakterden az
 
-  # bad
-  fixed ActiveModel::Errors deprecation messages failing when AR was used outside of Rails.
+  Mark huge records as obsolote when clearing hinting faults
+
+  # Kötü Örnek
+
+  fixed ActiveModel :: Errors deprecation messages failing when AR was
+  used outside of Rails.
   ```
 
-* After that should come a blank line followed by a more thorough
-  description. It should be wrapped to *72 characters* and explain *why*
-  the change is needed, *how* it addresses the issue and what *side-effects*
-  it might have.
+* Özet satırından sonra bir satır boşluk ve ardından daha ayrıntılı bir
+  açiklama gelmelidir. Bu açıklama *72 karaktere* sıgdırılmalı,
+  değişikliklere *neden* ihtiyaç duyulduğu açıklanmalı, problemin nasıl
+  çözüldüğü ve ne gibi y*an etkileri* olabileceğide belirtilmelidir.
 
-  It should also provide any pointers to related resources (eg. link to the
-  corresponding issue in a bug tracker):
+  Ayrıca kullanılan kaynağın linkide verilmelidir. (Örn. Bug takipçisinin
+  içindeki ilgili soruna link verilmesi )
 
   ```text
-  Short (50 chars or fewer) summary of changes
+  Değişimlerin kısa özeti (50 karakterden az)
 
-  More detailed explanatory text, if necessary. Wrap it to
-  72 characters. In some contexts, the first
-  line is treated as the subject of an email and the rest of
-  the text as the body.  The blank line separating the
-  summary from the body is critical (unless you omit the body
-  entirely); tools like rebase can get confused if you run
-  the two together.
+  Gerekirse daha açiklayıcı bir metin. 72 karaktere sıgdırın. Bazi
+  durumlarda ilk satir emailin konusu olarak düşünülür ve geri kalanıda
+  metnin gövdesi kabul edilir. Özet ile ana metni birbirinden ayıran boş
+  satır çok önemlidir. (Ana metnin tamamını çıkarmadıgınız sürece); özet
+  ile ana metin beraber olursa rebase gibi araçlar calıştırıldıgında hata
+  ile karşılaşılabilir.
 
-  Further paragraphs come after blank lines.
+  Sonraki paragraflar boş satırdan sonra gelir.
 
-  - Bullet points are okay, too
+  - Madde işaretli format kullanılmasında sakınca yoktur
 
-  - Use a hyphen or an asterisk for the bullet,
-    followed by a single space, with blank lines in
-    between
+  - Maddelerken tire veya yıldız işareti kullanın sonrasında bir boşluk
+  bırakıp cümlenize devam edin yeni maddeye geçerken bir satır boşluk
+  bırakın.
 
-  Source http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+  Kaynak
+  *http://tbaggery.com.2008/04/19/a-note-about-git-commit-messages.html*
   ```
 
-  Ultimately, when writing a commit message, think about what you would need
-  to know if you run across the commit in a year from now.
+  Sonuç olarak, bir commit mesajı yazarken bu mesaj ile yıllar sonra
+  tekrar karşılaştıgınızda o commit ile ilgili neyi bilmeniz gerektigini
+  düşünerek yazın.
 
-* If a *commit A* depends on *commit B*, the dependency should be
-  stated in the message of *commit A*. Use the SHA1 when referring to
-  commits.
+* Eger *commit A*, *B commitine* baglı ise, o baglılık *commit A* mesajının
+  içinde belirtilmelidir. (Bu işlemler sırasında SHA1(Secure Hash
+  Algorithm 1) kullanın)
 
-  Similarly, if *commit A* solves a bug introduced by *commit B*, it should
-  also be stated in the message of *commit A*.
+  Aynı şekilde , *A commiti* *B commiti* tarafından tanıtılan bir bug’ı çözerse,
+  bunun mesajı *A commitinin* içerisinde yer almalıdır.
 
-* If a commit is going to be squashed to another commit use the `--squash` and
-  `--fixup` flags respectively, in order to make the intention clear:
+* Eger bir commit başka bir commite sıkıştırılacaksa, yapmak
+  istediğinizi düzgün bir biçimde belirtmek için --squash ve –fixup
+  bayraklarını sırasıyla kullanınız.
 
   ```shell
   $ git commit --squash f387cab2
   ```
 
-  *(Tip: Use the `--autosquash` flag when rebasing. The marked commits will be
-  squashed automatically.)*
+  *Not: Rebase aracını kullanırken –autosquash bayragını kullanın.
+  İşaretlenmiş commitler otomatik olarak sıkıştırılacaktir.*
 
-## Merging
+## Birleştirme(Merging)
 
-* **Do not rewrite published history.** The repository's history is valuable in
-  its own right and it is very important to be able to tell *what actually
-  happened*. Altering published history is a common source of problems for
-  anyone working on the project.
+* **Yayın tarihini yeniden yazmayınız.** Bir deponun tarihinin kendi içinde
+degeri vardır ve o tarihte *tam olarak ne olduğunu* görebilmek çok önemlidir. Yayın
+tarihinde değişiklik yapmak projede yer alan herkes icin sorunların
+ortak kaynağıdır.
 
-* However, there are cases where rewriting history is legitimate. These are
-  when:
+* Ancak bazı durumlarda tarihi yeniden yazmak uygundur. Bunlar:
 
-  * You are the only one working on the branch and it is not being reviewed.
+  * Dal üzerinde bir tek siz calışıyorsanız ve kimse tarafından
+    incelenmiyorsa.
 
-  * You want to tidy up your branch (eg. squash commits) and/or rebase it onto
-    the "master" in order to merge it later.
+  * Dalınızı düzenlemek istiyorsaniz (Örn: commitleri sıkıştırarak) yada
+    rebase komutunu kullanarak daha sonra birleştirmek üzere “master” a
+    yollarken.
 
-  That said, *never rewrite the history of the "master" branch* or any other
-  special branches (ie. used by production or CI servers).
+  Kısacası Üretim veya CI serverlarının da dediği gibi “master. üzerindeki
+  tarihi veya herhangi başka özel bir dalın tarihini asla değiştirmeyin.
 
-* Keep the history *clean* and *simple*. *Just before you merge* your branch:
+* Tarihi *temiz* ve *sade* tutun. *Birleştirme işlemini yapmadan önce:*
 
-    1. Make sure it conforms to the style guide and perform any needed actions
-       if it doesn't (squash/reorder commits, reword messages etc.)
+    a) Model rehberine uygun olduğundan emin olun, eğer degil ise uygun hale
+    getiriniz (squash/reorder commits,mesajları yeniden yazarak etc.)
 
-    2. Rebase it onto the branch it's going to be merged to:
+    b) Birleştirileceği dala Rebase edin.
 
-      ```shell
+	  ```shell
       [my-branch] $ git fetch
       [my-branch] $ git rebase origin/master
-      # then merge
+      # sonra birleştirin
       ```
 
-      This results in a branch that can be applied directly to the end of the
-      "master" branch and results in a very simple history.
+      Böylelikle dalımızı “master” dalının en sonuna direk olarak
+      ekleyebiliriz buda çok sade bir geçmişin ortaya çıkmasını sağlayacaktır.
 
-      *(Note: This strategy is better suited for projects with short-running
-      branches. Otherwise it might be better to occassionally merge the
-      "master" branch instead of rebasing onto it.)*
+      *(Not: Bu strateji kısa vadeli dallardan oluşan projeler icin daha
+      uygundur. Bazi zamanlarda rebase komutu yerine merge komutunu kullanmak
+      daha iyi olabilir. )*
 
-* If your branch includes more than one commit, do not merge with a
-  fast-forward:
+* Eğer dalınız birden fazla commit içeriyor ise, fast-forward (ff) ile
+birleştirme yapmayınız.
 
   ```shell
-  # good - ensures that a merge commit is created
+  # İyi örnek – birleşme commitinin oluşturulduğundan emin olur
+
   $ git merge --no-ff my-branch
 
-  # bad
+  #Kötü örnek
+
   $ git merge my-branch
   ```
-
+  
 ## Misc.
 
-* There are various workflows and each one has its strengths and weaknesses.
-  Whether a workflow fits your case, depends on the team, the project and your
-  development procedures.
+* Birçok çeşit iş akışı vardır ve her birinin zayıf ve güçlü yönleri
+  vardır. Bir iş akışının size uyması, takımınıza, projenize ve geliştirme
+  prosedürlerinize bağlıdır.
 
-  That said, it is important to actually *choose* a workflow and stick with it.
+  Kendinize uygun iş akışını *seçmeniz* ve ona bağlı kalmanız oldukça
+  önemlidir.
 
-* *Be consistent.* This is related to the workflow but also expands to things
-  like commit messages, branch names and tags. Having a consistent style
-  throughout the repository makes it easy to understand what is going on by
-  looking at the log, a commit message etc.
+* *Tutarlı ve istikrarlı olun.* Bu sizin iş akışınızda sahip olmanız gereken
+  bir özellik olsada, commit mesajları, dal isimleri etiketler içinde
+  geçerlidir. Deponuzun tamamında tutarlı bir modele sahip olmak sadece
+  loglara bakarak neyin ne olduğunu anlamanız kolaylaşacaktır. Bir commit
+  mesaji vs.
 
-* *Test before you push.* Do not push half-done work.
+* *Pushlamadan önce test ediniz.* Yarım kalmış bir işi pushlamayınız.
 
-* Use [annotated tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags)
-  for marking releases or other important points in the history. Prefer
-  [lightweight tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags)
-  for personal use, such as to bookmark commits for future reference.
+* Sürümleri veya geçmişteki önemli noktaları işaretlemek için [annotated
+  tags (ek aciklamali etiketler)](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags) kullanın. Kişisel kullanımlar için
+  [lightweight tags (sade etiketler)](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) kullanın, örneğin ileride referans
+  olarak kullanacağınız yer imi commiti gibi.
 
-* Keep your repositories at a good shape by performing maintenance tasks
-  occasionally:
+* Depolarınızın her daim iyi durumda olmasını istiyorsanız, ara sıra
+  bakım yapınız.
 
   * [`git-gc(1)`](http://git-scm.com/docs/git-gc)
   * [`git-prune(1)`](http://git-scm.com/docs/git-prune)
   * [`git-fsck(1)`](http://git-scm.com/docs/git-fsck)
 
-# License
+# Lisans
 
 ![cc license](http://i.creativecommons.org/l/by/4.0/88x31.png)
 
-This work is licensed under a [Creative Commons Attribution 4.0
-International license](https://creativecommons.org/licenses/by/4.0/).
+Bu çalışma [Creative Commons Attribution 4.0
+International license](https://creativecommons.org/licenses/by/4.0/)
+tarafından lisanslanmıştır.
 
 # Credits
 
 Agis Anastasopoulos / [@agisanast](https://twitter.com/agisanast) / http://agis.io
 ... and [contributors](https://github.com/agis-/git-style-guide/graphs/contributors)!
+
+# Çeviri
+
+- Cüneyt Şentürk / [@CyneytSenturk](https://twitter.com/CyneytSenturk)
+- Mert Can Çam   / [@mertcancamm](https://twitter.com/mertcancamm)
