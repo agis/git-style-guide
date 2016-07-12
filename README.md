@@ -184,7 +184,7 @@ uygulamanız gerekicektir.
   *Not: Rebase aracını kullanırken –autosquash bayragını kullanın.
   İşaretlenmiş commitler otomatik olarak sıkıştırılacaktir.*
 
-## Birleştirme(Merging)
+## Birleştirme
 
 * **Yayın tarihini yeniden yazmayınız.** Bir deponun tarihinin kendi içinde
 degeri vardır ve o tarihte *tam olarak ne olduğunu* görebilmek çok önemlidir. Yayın
