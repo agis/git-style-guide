@@ -54,14 +54,14 @@ bir pull request açın.
 
 * Kelimeleri ayırmak için *tire* kullanın.
 
-* Birden fazla kişi aynı özellik uzerinde çalışırken bir tane takım için
+* Birden fazla kişi aynı özellik üzerinde çalışırken bir tane takım için
   dal , bir tane de kişisel dal yaratılmasi daha elverişli olacaktir.
   Aşagıdaki isim düzenini kullanabilirsiniz:
 
   ```shell
   $ git checkout -b feature-a/master # takim icin dal
-  $ git checkout -b feature-a/cuneyt # Cüneyt’in kişisel dal’ı
-  $ git checkout -b feature-a/mert   # Mert’in kişisel dal’ı
+  $ git checkout -b feature-a/maria # Maria’nin kişisel dal’ı
+  $ git checkout -b feature-a/nick   # Nick’in kişisel dal’ı
   ```
 
   Takım için yaratılan dalın kişisel dallar ile birleşmesi
