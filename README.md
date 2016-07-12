@@ -22,17 +22,13 @@ bir pull request açın.
 
 # İçindekiler
 
-1. [Dallar(Branches)](#dallar)
-
+1. [Dallar](#dallar)
 2. [Commits](#commits)
+  1. [Mesajlar](#mesajlar)
+3. [Birleştirme](#birleştirme)
+4. [Misc.](#misc)
 
-	1. [Mesajlar](#mesajlar)
-
-3.[Birleştirme(Merging)](#birleştirme)
-
-4.[Misc.](#misc)
-
-## Dallar(Branches)
+## Dallar
 
 * *Kisa* ve *açıklayıcı* isimler seçin.
 	
