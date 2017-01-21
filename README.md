@@ -1,7 +1,7 @@
 # Git Style Guide
 
 This is a Git Style Guide inspired by [*How to Get Your Change Into the Linux
-Kernel*](https://www.kernel.org/doc/Documentation/SubmittingPatches),
+Kernel*](https://kernel.org/doc/html/latest/process/submitting-patches.html),
 the [git man pages](http://git-scm.com/doc) and various practices popular
 among the community.
 
