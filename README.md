@@ -87,13 +87,18 @@ request.
 
 * Don't split a single *logical change* into several commits. For example,
   the implementation of a feature and the corresponding tests should be in the
-  same commit.
+  same commit. 
+
+* Modifying a commit using a *git ammend* in order to merge two logical changes 
+  into a single commit is also not advised. Isolate these changes into separate 
+  commits and use *git ammend* to modify a commit made for a particular logical change.
 
 * Commit *early* and *often*. Small, self-contained commits are easier to
   understand and revert when something goes wrong.
 
 * Commits should be ordered *logically*. For example, if *commit X* depends
   on changes done in *commit Y*, then *commit Y* should come before *commit X*.
+
 
 Note: While working alone on a local branch that *has not yet been pushed*, it's
 fine to use commits as temporary snapshots of your work. However, it still
