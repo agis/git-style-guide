@@ -81,6 +81,13 @@ request.
 * Each commit should be a single *logical change*. Don't make several
   *logical changes* in one commit. For example, if a patch fixes a bug and
   optimizes the performance of a feature, split it into two separate commits.
+  If you've been working simultaneously on multiple logical changes in a file,
+  use [interactive staging](https://git-scm.herokuapp.com/book/en/v2/Git-Tools-Interactive-Staging)
+  to stage only the logically related changes for each commit:
+
+  ```shell
+  $ git add -i
+  ```
 
   *Tip: Use `git add -p` to interactively stage specific portions of the
   modified files.*
