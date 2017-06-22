@@ -51,7 +51,7 @@ request.
   $ git checkout -b issue-15
   ```
 
-* Use *dashes* to separate words.
+* Use *hyphens* to separate words.
 
 * When several people are working on the *same* feature, it might be convenient
   to have *personal* feature branches and a *team-wide* feature branch.
