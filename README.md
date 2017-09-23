@@ -156,6 +156,13 @@ holds true that you should apply all of the above *before* pushing it.
     followed by a single space, with blank lines in
     between
 
+  The pointers to your related resources can serve as a footer 
+  for your commit message. Here is an example that is referencing 
+  issues in a bug tracker:
+  
+  Resolves: #56, #78
+  See also: #12, #34
+
   Source http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
   ```
 
