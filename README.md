@@ -16,6 +16,7 @@ Translations are available in the following languages:
 * [Korean](https://github.com/ikaruce/git-style-guide)
 * [Portuguese](https://github.com/guylhermetabosa/git-style-guide)
 * [Russian](https://github.com/alik0211/git-style-guide)
+* [Spanish](https://github.com/jeko2000/git-style-guide)
 * [Thai](https://github.com/zondezatera/git-style-guide)
 * [Turkish](https://github.com/CnytSntrk/git-style-guide)
 * [Ukrainian](https://github.com/denysdovhan/git-style-guide)
