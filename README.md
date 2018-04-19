@@ -157,10 +157,10 @@ holds true that you should apply all of the above *before* pushing it.
     followed by a single space, with blank lines in
     between
 
-  The pointers to your related resources can serve as a footer 
-  for your commit message. Here is an example that is referencing 
+  The pointers to your related resources can serve as a footer
+  for your commit message. Here is an example that is referencing
   issues in a bug tracker:
-  
+
   Resolves: #56, #78
   See also: #12, #34
 
@@ -212,18 +212,18 @@ holds true that you should apply all of the above *before* pushing it.
 
     2. Rebase it onto the branch it's going to be merged to:
 
-      ```shell
-      [my-branch] $ git fetch
-      [my-branch] $ git rebase origin/master
-      # then merge
-      ```
+       ```shell
+       [my-branch] $ git fetch
+       [my-branch] $ git rebase origin/master
+       # then merge
+       ```
 
-      This results in a branch that can be applied directly to the end of the
-      "master" branch and results in a very simple history.
+       This results in a branch that can be applied directly to the end of the
+       "master" branch and results in a very simple history.
 
-      *(Note: This strategy is better suited for projects with short-running
-      branches. Otherwise it might be better to occassionally merge the
-      "master" branch instead of rebasing onto it.)*
+       *(Note: This strategy is better suited for projects with short-running
+       branches. Otherwise it might be better to occassionally merge the
+       "master" branch instead of rebasing onto it.)*
 
 * If your branch includes more than one commit, do not merge with a
   fast-forward:
