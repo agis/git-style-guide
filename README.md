@@ -251,9 +251,9 @@ holds true that you should apply all of the above *before* pushing it.
 
 * *Test before you push.* Do not push half-done work.
 
-* Use [annotated tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags)
+* Use [annotated tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_annotated_tags)
   for marking releases or other important points in the history. Prefer
-  [lightweight tags](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags)
+  [lightweight tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_lightweight_tags)
   for personal use, such as to bookmark commits for future reference.
 
 * Keep your repositories at a good shape by performing maintenance tasks
