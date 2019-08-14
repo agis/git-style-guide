@@ -52,7 +52,14 @@ request.
   $ git checkout -b issue-15
   ```
 
-* Use *hyphens* to separate words.
+* Use lowercase in branch names. External ticket identifiers with uppercase
+  letters are a valid exception. Use *hyphens* to separate words.
+
+  ```shell
+  $ git checkout -b new-feature      # good
+  $ git checkout -b T321-new-feature # good (Phabricator task id)
+  $ git checkout -b New_Feature      # bad
+  ```
 
 * When several people are working on the *same* feature, it might be convenient
   to have *personal* feature branches and a *team-wide* feature branch.
