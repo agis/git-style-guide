@@ -12,6 +12,7 @@ Translations are available in the following languages:
 * [French](https://github.com/pierreroth64/git-style-guide)
 * [German](https://github.com/runjak/git-style-guide)
 * [Greek](https://github.com/grigoria/git-style-guide)
+* [Italian](https://github.com/vincendep/git-style-guide)
 * [Japanese](https://github.com/objectx/git-style-guide)
 * [Korean](https://github.com/ikaruce/git-style-guide)
 * [Polish](https://github.com/mbiesiad/git-style-guide/tree/pl_PL)
