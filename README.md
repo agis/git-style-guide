@@ -68,18 +68,18 @@ request.
   Use the following naming convention:
 
   ```shell
-  $ git checkout -b feature-a/master # team-wide branch
+  $ git checkout -b feature-a/main # team-wide branch
   $ git checkout -b feature-a/maria  # Maria's personal branch
   $ git checkout -b feature-a/nick   # Nick's personal branch
   ```
 
   Merge at will the personal branches to the team-wide branch (see ["Merging"](#merging)).
-  Eventually, the team-wide branch will be merged to "master".
+  Eventually, the team-wide branch will be merged to "main".
 
 * Delete your branch from the upstream repository after it's merged, unless
   there is a specific reason not to.
 
-  Tip: Use the following command while being on "master", to list merged
+  Tip: Use the following command while being on "main", to list merged
   branches:
 
   ```shell
@@ -209,9 +209,9 @@ holds true that you should apply all of the above *before* pushing it.
   * You are the only one working on the branch and it is not being reviewed.
 
   * You want to tidy up your branch (eg. squash commits) and/or rebase it onto
-    the "master" in order to merge it later.
+    the "main" in order to merge it later.
 
-  That said, *never rewrite the history of the "master" branch* or any other
+  That said, *never rewrite the history of the "main" branch* or any other
   special branches (ie. used by production or CI servers).
 
 * Keep the history *clean* and *simple*. *Just before you merge* your branch:
@@ -223,16 +223,16 @@ holds true that you should apply all of the above *before* pushing it.
 
        ```shell
        [my-branch] $ git fetch
-       [my-branch] $ git rebase origin/master
+       [my-branch] $ git rebase origin/main
        # then merge
        ```
 
        This results in a branch that can be applied directly to the end of the
-       "master" branch and results in a very simple history.
+       "main" branch and results in a very simple history.
 
        *(Note: This strategy is better suited for projects with short-running
        branches. Otherwise it might be better to occassionally merge the
-       "master" branch instead of rebasing onto it.)*
+       "main" branch instead of rebasing onto it.)*
 
 * If your branch includes more than one commit, do not merge with a
   fast-forward:
