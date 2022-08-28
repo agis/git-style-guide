@@ -173,7 +173,7 @@ holds true that you should apply all of the above *before* pushing it.
   Resolves: #56, #78
   See also: #12, #34
 
-  Source http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+  Source: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
   ```
 
   Ultimately, when writing a commit message, think about what you would need
