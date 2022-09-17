@@ -10,6 +10,7 @@ Translations are available in the following languages:
 * [Chinese (Simplified)](https://github.com/aseaday/git-style-guide)
 * [Chinese (Traditional)](https://github.com/JuanitoFatas/git-style-guide)
 * [French](https://github.com/pierreroth64/git-style-guide)
+* [Georgian](https://github.com/davidkadaria/git-style-guide)
 * [German](https://github.com/runjak/git-style-guide)
 * [Greek](https://github.com/grigoria/git-style-guide)
 * [Italian](https://github.com/vincendep/git-style-guide)
